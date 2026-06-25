@@ -9,7 +9,7 @@ ftp.login(
     os.environ["FTP_USER"],
     os.environ["FTP_PASS"]
 )
-
+ftp.cwd("Inventory")
 # Find newest Excel file
 files = ftp.nlst()
 
