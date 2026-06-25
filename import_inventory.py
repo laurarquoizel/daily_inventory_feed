@@ -9,6 +9,16 @@ ftp.login(
     os.environ["FTP_USER"],
     os.environ["FTP_PASS"]
 )
+files = ftp.nlst()
+
+print("Files found:")
+for f in files:
+    print(f)
+
+excel_files = [
+    f for f in files
+    if f.lower().endswith((".xlsx", ".xls"))
+]
 ftp.cwd("Inventory")
 # Find newest Excel file
 files = ftp.nlst()
