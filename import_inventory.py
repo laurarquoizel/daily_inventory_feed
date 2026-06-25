@@ -47,9 +47,15 @@ ftp.cwd(FTP_FOLDER)
 # List files
 files = ftp.nlst()
 
-print("Files found in FTP Inventory folder:")
+print("====================")
+print("Current FTP folder:")
+print(ftp.pwd())
+print("====================")
+
+print("Files found:")
 for f in files:
-    print(f)
+    print(repr(f))
+print("====================")
 
 # Only use Quoizel daily inventory Excel files
 excel_files = [
